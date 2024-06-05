@@ -33,7 +33,8 @@
   ```
 
 ## 3. 조건문  
-- 한줄 if문  
+- 한줄 if문
+  - else 사용해야 함   
   ```py
   money = int(input())
   vhicle = "버스" if money > 1000 else "걷기"
