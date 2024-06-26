@@ -12,6 +12,12 @@
   2%3
   # 2 
   ```
+- 리스트 원소 제거
+  - remove()  
+  ```py
+  arr.remove(i)
+  ```  
+
 
 ## 2. 문자열  
 - 접두사 : startswith  
