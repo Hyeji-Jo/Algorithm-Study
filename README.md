@@ -11,4 +11,4 @@
   - [연산](https://github.com/Hyeji-Jo/Algorithm-Study/tree/25646a028a4db915fbe5a99878f60782ccc9c7c9/%08Programmers/Python%20%EA%B8%B0%EC%B4%88/%EC%97%B0%EC%82%B0)  
   - [반복문](https://github.com/Hyeji-Jo/Algorithm-Study/tree/c226ad25f6b025d1a11a10195c3ccadb28a67d4f/%08Programmers/Python%20%EA%B8%B0%EC%B4%88/%EB%B0%98%EB%B3%B5%EB%AC%B8)  
   - [출력](https://github.com/Hyeji-Jo/Algorithm-Study/tree/c226ad25f6b025d1a11a10195c3ccadb28a67d4f/%08Programmers/Python%20%EA%B8%B0%EC%B4%88/%EC%B6%9C%EB%A0%A5)  
-  - [함수(메서드)](https://github.com/Hyeji-Jo/Algorithm-Study/blob/c226ad25f6b025d1a11a10195c3ccadb28a67d4f/%08Programmers/Python%20%EA%B8%B0%EC%B4%88/%ED%95%A8%EC%88%98(%EB%A9%94%EC%84%9C%EB%93%9C)/README.md)  
+  - [함수(메서드)](https://github.com/Hyeji-Jo/Algorithm-Study/tree/c226ad25f6b025d1a11a10195c3ccadb28a67d4f/%08Programmers/Python%20%EA%B8%B0%EC%B4%88/%ED%95%A8%EC%88%98(%EB%A9%94%EC%84%9C%EB%93%9C))  
