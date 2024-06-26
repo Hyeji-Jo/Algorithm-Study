@@ -25,3 +25,10 @@
   result = my_string.split()
   # result = ["i", "love", "you"]
   ```  
+
+## 영어 숫자로 바꾸기
+- ord()
+  ```py
+  ord('a')
+  # 97
+  ```  
