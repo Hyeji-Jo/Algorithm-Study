@@ -36,7 +36,22 @@
   
   result = str.endswith('exam')
   print(result) #True
-  ```
+  ```  
+
+- 공백으로 구분하기
+  - .split()
+    ```py
+    my_string = "i love you"
+    result = my_string.split()
+    # result = ["i", "love", "you"]
+    ```  
+
+- 영어 숫자로 바꾸기
+  - ord()
+    ```py
+    ord('a')
+    # 97
+    ```  
 
 ## 3. 조건문  
 - 한줄 if문
@@ -58,7 +73,12 @@
   ```
 
 ## 4. 연산  
-
+- 원소의 곱  
+  - prod()  
+    ```py
+    from math import prod
+    prod(num_list)
+    ```  
 ## 5. 반복문  
 
 ## 6. 출력  
