@@ -39,19 +39,58 @@
   - 순서가 있는 배열에는 어울리지 않음
  
 ## 4) Dictionary(파이썬에서 hash table 활용의 예)
-- keys
-  - 키값 추출
-    ```py
-      students = {'kim': 17, 'lee': 15, 'park': 18}
-      # key 출력
-      print(students.keys()) # >> dict_keys(['kim', 'lee', 'park'])
-  
-      # key 순서대로 출력
-      for student in students.keys():
-      	print(student)
-      # kim
-      # lee
-      # park
-    ```
-    
+- keys  
+  - 키값 추출  
+  ```py
+  students = {'kim': 17, 'lee': 15, 'park': 18}
 
+  # key 출력
+  print(students.keys()) # >> dict_keys(['kim', 'lee', 'park'])  
+
+  # key 순서대로 출력
+  for student in students.keys():
+    print(student)
+  # kim
+  # lee
+  # park
+  ```  
+  
+- values  
+  - 딕셔너리의 값 추출
+  ```py
+  # value 출력
+  print(students.values())
+
+  # value 순서대로 출력
+  for age in students.values():
+  	print(age)
+  ```
+
+- get  
+  - 딕셔너리 키로 값 얻기
+  ```py
+  print(students.get('kim')) # 17
+  ```  
+  
+- items  
+  - 딕셔너리 키, 값 합쳐서 뽑기
+  ```py
+  print(students.items()) # dict_items([('kim', 17), ('lee', 15), ('park', 18)])
+
+  for student_info in students.items():
+	  print(student_info)
+  ```
+
+- del  
+  - 딕셔너리에서 키, 값 한쌍 지우기
+  ```py
+  del students['kim']
+  print(students) # {'lee': 15, 'park': 18}
+  ```
+
+- clear  
+  - 모두 지우기
+  ```py
+  students.clear()
+  print(students) # ""
+  ```  
