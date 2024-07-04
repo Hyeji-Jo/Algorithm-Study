@@ -41,17 +41,17 @@
 ## 4) Dictionary(파이썬에서 hash table 활용의 예)
 - keys
   - 키값 추출
-    '''py
-    students = {'kim': 17, 'lee': 15, 'park': 18}
-    # key 출력
-    print(students.keys()) # >> dict_keys(['kim', 'lee', 'park'])
-
-    # key 순서대로 출력
-    for student in students.keys():
-    	print(student)
-    # kim
-    # lee
-    # park
-    '''
+    ```py
+      students = {'kim': 17, 'lee': 15, 'park': 18}
+      # key 출력
+      print(students.keys()) # >> dict_keys(['kim', 'lee', 'park'])
+  
+      # key 순서대로 출력
+      for student in students.keys():
+      	print(student)
+      # kim
+      # lee
+      # park
+    ```
     
 
