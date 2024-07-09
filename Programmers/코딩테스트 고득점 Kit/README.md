@@ -96,3 +96,23 @@
   ```  
 
 # 2.스택/큐  
+- 스택(Stack)  
+  - 후입선출(Last in first out) 원칙
+  - 가장 마지막에 입력된 데이터가 가장 먼저 제거되는 구조
+  - 파이썬의 리스트가 사실상 스택의 모든 연산을 지원  
+- 큐(Queue)  
+  - 선입선출(Firt in first out) 원칙  
+  - 파이썬에서 큐를 구현할때는 덱을 이용
+  ```py
+  from collections import deque
+
+dq = deque() # 덱 생성
+
+dq.append(1) # dq에 뒤로 데이터 넣기
+dq.appendleft(2) # dq에 앞으로 데이터 넣기
+
+print(dq) # deque([2, 1])
+
+print(dq.pop()) # 1, 맨 뒤의 데이터 꺼내기
+print(dq.popleft()) # 2, 맨 앞의 데이터 꺼내기
+  ```
