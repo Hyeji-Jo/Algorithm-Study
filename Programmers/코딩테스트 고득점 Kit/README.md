@@ -94,3 +94,5 @@
   students.clear()
   print(students) # ""
   ```  
+
+# 2.스택/큐  
