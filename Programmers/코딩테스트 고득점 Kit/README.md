@@ -106,13 +106,13 @@
   ```py
   from collections import deque
 
-dq = deque() # 덱 생성
+  dq = deque() # 덱 생성
 
-dq.append(1) # dq에 뒤로 데이터 넣기
-dq.appendleft(2) # dq에 앞으로 데이터 넣기
+  dq.append(1) # dq에 뒤로 데이터 넣기
+  dq.appendleft(2) # dq에 앞으로 데이터 넣기
 
-print(dq) # deque([2, 1])
+  print(dq) # deque([2, 1])
 
-print(dq.pop()) # 1, 맨 뒤의 데이터 꺼내기
-print(dq.popleft()) # 2, 맨 앞의 데이터 꺼내기
+  print(dq.pop()) # 1, 맨 뒤의 데이터 꺼내기
+  print(dq.popleft()) # 2, 맨 앞의 데이터 꺼내기
   ```
