@@ -97,12 +97,13 @@
 
 # 2.스택/큐  
 - 스택(Stack)  
-  - 후입선출(Last in first out) 원칙
-  - 가장 마지막에 입력된 데이터가 가장 먼저 제거되는 구조
-  - 파이썬의 리스트가 사실상 스택의 모든 연산을 지원  
+  - 후입선출(Last in first out) 원칙  
+  - 가장 마지막에 입력된 데이터가 가장 먼저 제거되는 구조  
+  - 파이썬의 리스트가 사실상 스택의 모든 연산을 지원
+
 - 큐(Queue)  
   - 선입선출(Firt in first out) 원칙  
-  - 파이썬에서 큐를 구현할때는 덱을 이용
+  - 파이썬에서 큐를 구현할때는 덱을 이용  
   ```py
   from collections import deque
 
@@ -115,4 +116,62 @@
 
   print(dq.pop()) # 1, 맨 뒤의 데이터 꺼내기
   print(dq.popleft()) # 2, 맨 앞의 데이터 꺼내기
-  ```
+  ```  
+
+  # 3. 힙  
+- 들어가는 자료에 우선순위를 매겨서 우선순위가 놓은 자료가 먼저 나가는 자료 구조  
+- **우선순위 큐**를 구현한 자료 구조로 **완전 이진트리의 일종**  
+- **_완전 이진트리_**  
+  - 각 노드가 최대 2개의 자식 노드를 갖는 트리 형태  
+  - 최하단 좌측 노드부터 차례로 삽입  
+- 최소 힙 : 부모 노드의 키값이 자식 노드의 키값보다 항상 작은 힙  
+- 최대 힙 : 부모 노드의 키값이 자식 노드의 키값보다 항상 큰 힙  
+
+- heappush(heap, item)  
+  - item을 heap에 추가  
+  ```py
+  import heapq
+
+  heap = []
+  heapq.heappush(heap, 50)
+  heapq.heappush(heap, 20)
+  heapq.heappush(heap, 100)
+
+  print(heap) # [20, 50, 100]
+  ```  
+  
+- heappop(heap)  
+  - heap에서 가장 작은 원소를 제거하고 반환  
+  ```py
+  removed_value = heapq.heappop(heap)
+
+  print(removed_value) # 20
+  print(heap) # [50, 100]
+  ```  
+
+- heapify(list)  
+  - list를 heap으로 변환  
+  ```py
+  heap2 = [500, 200, 1000]
+  heapq.heapify(heap2)
+
+  print(heap2) # [200, 500, 1000]
+  ```  
+
+- 최대 힙 구현  
+  - heapq는 기본적으로 **최소 힙**만 제공  
+  ```py
+  import heapq
+
+  values = [1, 2, 3, 4, 5]
+  heap = []
+  max_heap = []
+
+  for value in values:
+      heapq.heappush(heap, -value)
+  print(heap) # [-5, -4, -2, -1, -3]
+
+  for i in range(len(heap)):
+      max_heap.append(-heapq.heappop(heap))
+  print(max_heap) # [5, 4, 2, 1, 3]
+  ```  
