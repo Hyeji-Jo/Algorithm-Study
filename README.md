@@ -130,7 +130,7 @@
   ```  
   
 - [힙](https://github.com/Hyeji-Jo/Algorithm-Study/tree/f937cc55145dfe0d4a84ea76974877c06a116dd9/%08Programmers/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B3%A0%EB%93%9D%EC%A0%90%20Kit/%ED%9E%99)  
-- 자료에 우선순위를 매겨서 우선순위가 높은 자료가 먼저 나가는 구조 (=우선순위 큐)  
+  - 자료에 우선순위를 매겨서 우선순위가 높은 자료가 먼저 나가는 구조 (=우선순위 큐)  
   ```py
   import heapq
   heap = []
