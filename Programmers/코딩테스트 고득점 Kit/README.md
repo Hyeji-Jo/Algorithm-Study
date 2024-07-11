@@ -177,3 +177,81 @@
       max_heap.append(-heapq.heappop(heap))
   print(max_heap) # [5, 4, 2, 1, 3]
   ```  
+
+# 4. 완전탐색  
+- 모든 가능한 경우의 수를 탐색하여 최적의 결과를 찾는 방법을 의미  
+- 보통 완전탐색 문제는 for문과 if문을 활용하거나, BFS/DFS를 활용하는 경우가 대부분  
+- 입력으로 주어지는 데이터의 크기가 매우 작을때 활용  
+  
+## 1) 브루트 포스(Brute-Force)  
+- 모든 경우를 다 탐색하면서 결과를 얻는 알고리즘   
+- 경우의 수가 작을 때 사용하는 것이 일반적  
+- ex) 자물쇠 암호를 찾는 경우  
+  ```py
+  # 배열 탐색
+  def findIndex(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+  ```
+
+## 2) 비트마스크  
+- 모든 경우의 수를 이진수로 표현하여 계산해 나가는 방식  
+- 하나의 변수에 여러개의 상태정보를 저장할 수 있음  
+- 비트 연산을 사용하기에 빠르게 계산할 수 있어, 경우의 수가 많은 경우에 유용  
+
+## 3) 재귀 함수  
+- 자기 자신을 호출하며 모든 가능한 경우를 체크하면서 최적의 해답을 찾는 방법  
+
+## 4) 순열  
+- 서로 다른 n개 중에서 r개를 선택하여 숫자를 순서대로 뽑는 경우  
+
+## 5) 깊이 우선 탐색(DFS)/너비 우선 탐색(BFS)  
+- 그래프 자료구조에서 모든 정점을 탐색하기 위한 방법  
+- 비선형 구조에서 주로 사용되며 선형 구조에서는 큰 의미를 갖지 않음  
+- **DFS** : 루트 노드에서 시작하여 다음 분기로 넘어가기 전에 **해당 분기를 완벽하게 탐색**하는 방법 (스택, 재귀 활용)  
+- **BFS** : 루트 노드에서 시작하여 **인접한 노드를 먼저 탐색**하는 방법 (큐 활용)  
+
+```py
+import itertools
+
+# product, 곱집합
+# product(p, q, … [repeat=1])
+a = [1, 2, 3, 4]
+aa = list(itertools.product(a, a))
+print(aa) # [(1, 1), (1, 2), (1, 3), (1, 4), ... , (4, 1), (4, 2), (4, 3), (4, 4)]
+
+b = list(itertools.product('1234', repeat=2))
+print(b) # [('1', '1'), ('1', '2'), ('1', '3'), ... , ('4', '2'), ('4', '3'), ('4', '4')]
+
+# permutations, 순열
+# permutations(p[, r])
+# 가능한 모든 순서를 반환, 반복되는 요소 없음
+permutations_a = list(itertools.permutations(a))
+print(permutations_a) # [(1, 2, 3, 4), (1, 2, 4, 3), (1, 3, 2, 4), (1, 3, 4, 2), (1, 4, 2, 3), (1, 4, 3, 2), (2, 1, 3, 4), (2, 1, 4, 3), (2, 3, 1, 4), (2, 3, 4, 1), (2, 4, 1, 3), (2, 4, 3, 1), (3, 1, 2, 4), (3, 1, 4, 2), (3, 2, 1, 4), (3, 2, 4, 1), (3, 4, 1, 2), (3, 4, 2, 1), (4, 1, 2, 3), (4, 1, 3, 2), (4, 2, 1, 3), (4, 2, 3, 1), (4, 3, 1, 2), (4, 3, 2, 1)]
+
+permutations_a = list(itertools.permutations(a, 2))
+print(permutations_a) # [(1, 2), (1, 3), (1, 4), (2, 1), (2, 3), (2, 4), (3, 1), (3, 2), (3, 4), (4, 1), (4, 2), (4, 3)]
+
+permutations_a = list(itertools.permutations(a, 3))
+print(permutations_a) # [(1, 2, 3), (1, 2, 4), (1, 3, 2), (1, 3, 4), (1, 4, 2), (1, 4, 3), (2, 1, 3), (2, 1, 4), (2, 3, 1), (2, 3, 4), (2, 4, 1), (2, 4, 3), (3, 1, 2), (3, 1, 4), (3, 2, 1), (3, 2, 4), (3, 4, 1), (3, 4, 2), (4, 1, 2), (4, 1, 3), (4, 2, 1), (4, 2, 3), (4, 3, 1), (4, 3, 2)]
+
+# combinations, 조합
+# combinatinos(p, r)
+# 반복되는 요소가 없는 정렬된 순서
+combinations_a = list(itertools.combinations(a, 2))
+print(combinations_a) # [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
+
+combinations_a = list(itertools.combinations(a, 3))
+print(combinations_a) # [(1, 2, 3), (1, 2, 4), (1, 3, 4), (2, 3, 4)]
+
+# combinations_with_replacement, 중복이 가능한 조합
+# combinations_with_replacement(p, r)
+# 조합에서 개별 요소마다 두 번 이상 반복할 수 있음
+combinations_with_replacement_a = list(itertools.combinations_with_replacement(a, 2))
+print(combinations_with_replacement_a) # [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (4, 4)]
+
+combinations_with_replacement_a = list(itertools.combinations_with_replacement(a, 3))
+print(combinations_with_replacement_a) # [(1, 1, 1), (1, 1, 2), (1, 1, 3), (1, 1, 4), (1, 2, 2), (1, 2, 3), (1, 2, 4), (1, 3, 3), (1, 3, 4), (1, 4, 4), (2, 2, 2), (2, 2, 3), (2, 2, 4), (2, 3, 3), (2, 3, 4), (2, 4, 4), (3, 3, 3), (3, 3, 4), (3, 4, 4), (4, 4, 4)]
+```
