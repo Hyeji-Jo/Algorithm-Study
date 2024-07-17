@@ -268,3 +268,68 @@ list(itertools.product(A, repeat=2)) # [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), 
   - 모든 간선들을 '거리(비용)'을 기준으로 오름차순 정렬  
   - 정렬된 순서에 맞게 그래프에 포함  
   - 포함시키기 전, 사이클을 형성하는 경우 간선을 포함하지 않음  
+
+# 6. 동적계획법  
+- 여러 개의 소문제로 분할하여 각 소문제의 해결안을 바탕으로 주어진 문제 해결  
+- 작은 문제에서 구한 정답은 그것을 포함하는 큰 문제에서도 동일  
+- 시간 & 자원절약 가능  
+
+## 1) 피보나치 수열  
+  ```py  
+  def pibonacci_recur(n):
+      if n>=2:
+    	  return pibonacci_recur(n-1) + pibonacci_recur(n-2)
+      else: 
+  	  return n
+
+  n=int(input("n값을 입력하세요"))
+
+  print(pibonacci_recur(n)) # n번째 피보나치 수열항 출력
+  ```  
+## 2) Memoization (Top-Down, 하향식)  
+- 하위 문제에 대하여 정답을 계산했는지 확인해가며 문제를 자연스럽게 풀어나가는 방법  
+  ```py
+  # DP, Memoization
+
+  dp_Memo=[0]*11
+  dp_Memo[0]=1
+  dp_Memo[1]=1
+
+  def fib_Memo(n):
+    
+      # 한번도 계산한 적이 없는 경우
+      if dp_Memo[n]==0: #dp list에 계산한적이 없는경우 0으로 저장되어 있음
+          dp_Memo[n] = fib(n-1)+fib(n-2) #재귀로 계산하여 리스트에 값 추가
+    
+      # 새롭게 추가 값 혹은 저장된 값 반환
+      return dp_Memo[n]
+
+  # 피보나치 수열 항 리스트 전체 출력
+  for i in range(11):
+      fib_Memo(i)
+
+  print(dp_Memo) # [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+  fib_Memo(10) # 89
+  ```  
+## 3) Tabulation (Bottom-up, 상향식)  
+- 더 작은 하위 문제부터 살펴본 다음 작은 문제의 정답을 이용하여 큰 문제의 정답을 풀어나가는 방법  
+  ```py
+  # DP, Tabulation(Bottom-Up, 상향식)
+
+  def fib_Tab1(n):
+    
+      dp_Tab=[0]*(n+1)
+      dp_Tab[0],dp_Tab[1]= 1,1
+    
+      # 작은 값(소문제)부터 직접 계산하며 진행
+      # 2항 ~ n항 까지 피보나치 수열항 계산 (0,1 항 = 1)
+      for i in range(2,n+1):        
+          dp_Tab[i]=dp_Tab[i-1]+dp_Tab[i-2]
+    
+      print(dp_Tab) # 피보나치 수열 항 리스트 전체 출력 [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+    
+      return dp_Tab[n]
+
+  fib_Tab(10) # 89
+  ```  
