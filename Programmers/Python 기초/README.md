@@ -78,7 +78,25 @@
     ```py
     from math import prod
     prod(num_list)
+    ```
+- 약수의 수  
+  - math.sqrt()  
+    ```py
+    import math
+    sqrt = math.sqrt(i)
+    if int(sqrt) == sqrt:
+      print('약수의 갯수는 홀수')
+    else:
+      print('약수의 갯수는 짝수')
     ```  
+  - i**0.5  
+    ```py
+    if int(i**0.5) == i**0.5:
+      print('약수의 갯수는 홀수')
+    else:
+      print('약수의 갯수는 짝수')
+    ```  
+    
 ## 5. 반복문  
 
 ## 6. 출력  
