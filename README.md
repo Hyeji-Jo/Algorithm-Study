@@ -51,6 +51,20 @@
   # 원소의 곱 : prod(x)
   from math import prod
   prod(num_list)
+
+  # 약수의 수
+  import math
+  sqrt = math.sqrt(i)
+  if int(sqrt) == sqrt:
+    print('약수의 갯수는 홀수')
+  else:
+    print('약수의 갯수는 짝수')
+
+  # 약수의 수(2)
+  if int(i**0.5) == i**0.5:
+    print('약수의 갯수는 홀수')
+  else:
+    print('약수의 갯수는 짝수')
   ```  
   
 - [반복문](https://github.com/Hyeji-Jo/Algorithm-Study/tree/c226ad25f6b025d1a11a10195c3ccadb28a67d4f/%08Programmers/Python%20%EA%B8%B0%EC%B4%88/%EB%B0%98%EB%B3%B5%EB%AC%B8)  
@@ -148,4 +162,113 @@
 
   # list를 heap으로 변환 : heapq.heapify(x)
   ```  
-   
+
+- [완전탐색](https://github.com/Hyeji-Jo/Algorithm-Study/tree/726d6f33ecdc38fbfaf13f6d78b2368778486446/%08Programmers/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B3%A0%EB%93%9D%EC%A0%90%20Kit/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89)
+  ```py
+  import itertools
+  
+  # product, 곱집합
+  # product(p, q, … [repeat=1])
+  a = [1, 2, 3, 4]
+  aa = list(itertools.product(a, a))
+  print(aa) # [(1, 1), (1, 2), (1, 3), (1, 4), ... , (4, 1), (4, 2), (4, 3), (4, 4)]
+  
+  b = list(itertools.product('1234', repeat=2))
+  print(b) # [('1', '1'), ('1', '2'), ('1', '3'), ... , ('4', '2'), ('4', '3'), ('4', '4')]
+  
+  # permutations, 순열
+  # permutations(p[, r])
+  # 가능한 모든 순서를 반환, 반복되는 요소 없음
+  permutations_a = list(itertools.permutations(a))
+  print(permutations_a) # [(1, 2, 3, 4), (1, 2, 4, 3), (1, 3, 2, 4), (1, 3, 4, 2), (1, 4, 2, 3), (1, 4, 3, 2), (2, 1, 3, 4), (2, 1, 4, 3), (2, 3, 1, 4), (2, 3, 4, 1), (2, 4, 1, 3), (2, 4, 3, 1), (3, 1, 2, 4), (3, 1, 4, 2), (3, 2, 1, 4), (3, 2, 4, 1), (3, 4, 1, 2), (3, 4, 2, 1), (4, 1, 2, 3), (4, 1, 3, 2), (4, 2, 1, 3), (4, 2, 3, 1), (4, 3, 1, 2), (4, 3, 2, 1)]
+  
+  permutations_a = list(itertools.permutations(a, 2))
+  print(permutations_a) # [(1, 2), (1, 3), (1, 4), (2, 1), (2, 3), (2, 4), (3, 1), (3, 2), (3, 4), (4, 1), (4, 2), (4, 3)]
+  
+  permutations_a = list(itertools.permutations(a, 3))
+  print(permutations_a) # [(1, 2, 3), (1, 2, 4), (1, 3, 2), (1, 3, 4), (1, 4, 2), (1, 4, 3), (2, 1, 3), (2, 1, 4), (2, 3, 1), (2, 3, 4), (2, 4, 1), (2, 4, 3), (3, 1, 2), (3, 1, 4), (3, 2, 1), (3, 2, 4), (3, 4, 1), (3, 4, 2), (4, 1, 2), (4, 1, 3), (4, 2, 1), (4, 2, 3), (4, 3, 1), (4, 3, 2)]
+  
+  # combinations, 조합
+  # combinatinos(p, r)
+  # 반복되는 요소가 없는 정렬된 순서
+  combinations_a = list(itertools.combinations(a, 2))
+  print(combinations_a) # [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
+  
+  combinations_a = list(itertools.combinations(a, 3))
+  print(combinations_a) # [(1, 2, 3), (1, 2, 4), (1, 3, 4), (2, 3, 4)]
+  
+  # combinations_with_replacement, 중복이 가능한 조합
+  # combinations_with_replacement(p, r)
+  # 조합에서 개별 요소마다 두 번 이상 반복할 수 있음
+  combinations_with_replacement_a = list(itertools.combinations_with_replacement(a, 2))
+  print(combinations_with_replacement_a) # [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (4, 4)]
+  
+  combinations_with_replacement_a = list(itertools.combinations_with_replacement(a, 3))
+  print(combinations_with_replacement_a) # [(1, 1, 1), (1, 1, 2), (1, 1, 3), (1, 1, 4), (1, 2, 2), (1, 2, 3), (1, 2, 4), (1, 3, 3), (1, 3, 4), (1, 4, 4), (2, 2, 2), (2, 2, 3), (2, 2, 4), (2, 3, 3), (2, 3, 4), (2, 4, 4), (3, 3, 3), (3, 3, 4), (3, 4, 4), (4, 4, 4)]
+  
+  # product, 데카르트 곱
+  A = [1,2,3]
+  list(itertools.product(A, repeat=2)) # [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)]
+  ```
+
+- [그리드](https://github.com/Hyeji-Jo/Algorithm-Study/tree/726d6f33ecdc38fbfaf13f6d78b2368778486446/%08Programmers/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B3%A0%EB%93%9D%EC%A0%90%20Kit/%EA%B7%B8%EB%A6%AC%EB%94%94)
+
+- [동적계획법](https://github.com/Hyeji-Jo/Algorithm-Study/tree/726d6f33ecdc38fbfaf13f6d78b2368778486446/%08Programmers/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B3%A0%EB%93%9D%EC%A0%90%20Kit/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95)
+  - 피보나치수열
+  ```py  
+  def pibonacci_recur(n):
+      if n>=2:
+    	  return pibonacci_recur(n-1) + pibonacci_recur(n-2)
+      else: 
+  	  return n
+
+  n=int(input("n값을 입력하세요"))
+
+  print(pibonacci_recur(n)) # n번째 피보나치 수열항 출력
+  ```
+
+  - Memoization
+  ```py
+  # DP, Memoization
+
+  dp_Memo=[0]*11
+  dp_Memo[0]=1
+  dp_Memo[1]=1
+
+  def fib_Memo(n):
+    
+      # 한번도 계산한 적이 없는 경우
+      if dp_Memo[n]==0: #dp list에 계산한적이 없는경우 0으로 저장되어 있음
+          dp_Memo[n] = fib(n-1)+fib(n-2) #재귀로 계산하여 리스트에 값 추가
+    
+      # 새롭게 추가 값 혹은 저장된 값 반환
+      return dp_Memo[n]
+
+  # 피보나치 수열 항 리스트 전체 출력
+  for i in range(11):
+      fib_Memo(i)
+
+  print(dp_Memo) # [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+  fib_Memo(10) # 89
+  ```  
+  - Tabulation
+  ```py
+  # DP, Tabulation(Bottom-Up, 상향식)
+
+  def fib_Tab1(n):
+    
+      dp_Tab=[0]*(n+1)
+      dp_Tab[0],dp_Tab[1]= 1,1
+    
+      # 작은 값(소문제)부터 직접 계산하며 진행
+      # 2항 ~ n항 까지 피보나치 수열항 계산 (0,1 항 = 1)
+      for i in range(2,n+1):        
+          dp_Tab[i]=dp_Tab[i-1]+dp_Tab[i-2]
+    
+      print(dp_Tab) # 피보나치 수열 항 리스트 전체 출력 [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+    
+      return dp_Tab[n]
+
+  fib_Tab(10) # 89
+  ```  
