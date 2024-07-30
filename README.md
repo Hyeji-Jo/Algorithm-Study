@@ -48,6 +48,9 @@
   # 나머지
   2%3  #2
 
+  # divmod(n, m) - n을 m으로 나눈 몫과 나머지 출력
+  n, re = divmod(n, 3)
+
   # 원소의 곱 : prod(x)
   from math import prod
   prod(num_list)
@@ -312,7 +315,33 @@
   ```  
 
   - count()
-    ```py
+  ```py
   'ooyyy'.count('y') # 3
   ['ox', 'o', 'x', 'oxoxox'].count('ox') #1
+  ```
+
+  - 10 진법을 n 진법으로 변환
+  ```py
+  def decimal_to_base(n, base):
+    if n == 0:
+        return "0"
+    
+    digits = []
+    while n:
+        digits.append(int(n % base))
+        n //= base
+    
+    # Since we collected digits from least significant to most significant,
+    # we need to reverse the order
+    return ''.join(str(digit) for digit in digits[::-1])
+
+  # 예제 사용법:
+  number = 255
+  base = 16
+  print(decimal_to_base(number, base))  # 10진수 255를 16진법으로 변환
+  ```
+
+  - n 진수를 10진수로 변환 : int(a, n)
+  ```py
+  int(0021, 3)  # 7
   ```
