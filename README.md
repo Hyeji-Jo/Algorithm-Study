@@ -272,3 +272,35 @@
 
   fib_Tab(10) # 89
   ```  
+
+
+### 연습문제
+- 최대공약수와 최소공배수
+  ```py
+  ## 최대공약수
+  def gcd(a, b):
+      if a % b == 0:
+          return b
+      else:
+          return gcd(b, a%b) # b와 a를 b로 나눈 나머지를 반환
+  
+  ## 최소공배수
+  def lcm(a, b):
+  	return (a*b) // gcd(a, b)
+  
+  ## 활용 풀이
+  def gcd(n, m):
+      if n%m == 0:
+          return m
+      else:
+          return gcd(m, n%m)
+      
+  def solution(n, m):
+      answer = [gcd(m, n), n*m // gcd(m,n)]
+      return answer
+  ```
+
+  - 맨 첫 글자만 대문자로 변환 : capitalize()
+  ```py
+  jaden_case_words = [word.capitalize() for word in words]
+  ```
