@@ -286,6 +286,7 @@
           return b
       else:
           return gcd(b, a%b) # b와 a를 b로 나눈 나머지를 반환
+
   
   ## 최소공배수
   def lcm(a, b):
