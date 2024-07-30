@@ -299,8 +299,20 @@
       answer = [gcd(m, n), n*m // gcd(m,n)]
       return answer
   ```
+  
 
   - 맨 첫 글자만 대문자로 변환 : capitalize()
   ```py
   jaden_case_words = [word.capitalize() for word in words]
+  ```
+  
+  - 이진수로 변환 : bin()
+  ```py
+  bin(3) # '0b11'
+  ```  
+
+  - count()
+    ```py
+  'ooyyy'.count('y') # 3
+  ['ox', 'o', 'x', 'oxoxox'].count('ox') #1
   ```
