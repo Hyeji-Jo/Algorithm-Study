@@ -26,6 +26,10 @@
 
   # 영어를 숫자로 바꾸기 : ord(x)
   ord('a')  # 97
+
+  # 거꾸로 출력하기 : [::-1]
+  s = 'abcde'
+  print(s[::-1])  # 'edcba'
   ```  
   
 - [조건문](https://github.com/Hyeji-Jo/Algorithm-Study/tree/8a2d055237545b9842580e41a899d4410143f2bd/%08Programmers/Python%20%EA%B8%B0%EC%B4%88/%EC%A1%B0%EA%B1%B4%EB%AC%B8)  
