@@ -10,3 +10,7 @@ def solution(n):
             ans += 1
 
     return ans
+
+
+def solution(n):
+    return bin(n).count('1')
