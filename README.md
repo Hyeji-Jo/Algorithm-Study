@@ -102,6 +102,9 @@
   y = reversed(x)
   y # <list_reverseiterator object at 0x1060c9fd0>
   list(y) # [3, 2, 11, 1]
+
+  # lambda 활용
+  sorted(strings, key=lambda x: (x[n], x))
   ```  
   
 
