@@ -155,6 +155,13 @@
   
   print(dq.pop()) # 1, 맨 뒤의 데이터 꺼내기
   print(dq.popleft()) # 2, 맨 앞의 데이터 꺼내기
+
+  a = deque([1, 2, 3, 4, 5])
+  a.rotate(1) # 오른쪽으로 이동
+  print(a) # deque([5, 1, 2, 3, 4])
+
+  a.rotate(-1) # 왼쪽으로 이동
+  print(a) # deque([2, 3, 4, 5, 1])
   ```  
   
 - [힙](https://github.com/Hyeji-Jo/Algorithm-Study/tree/f937cc55145dfe0d4a84ea76974877c06a116dd9/%08Programmers/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B3%A0%EB%93%9D%EC%A0%90%20Kit/%ED%9E%99)  
