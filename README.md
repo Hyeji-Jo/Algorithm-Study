@@ -105,6 +105,10 @@
 
   # lambda 활용
   sorted(strings, key=lambda x: (x[n], x))
+
+  # Counter 함수 활용
+  from collections import Counter
+  Counter(['red', 'blue', 'red', 'green', 'blue', 'blue']) # Counter({'blue': 3, 'red': 2, 'green': 1})
   ```  
   
 
