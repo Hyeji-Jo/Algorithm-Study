@@ -420,7 +420,7 @@
     - 가장 최근에 사용된 데이터를 제거하는 방식  
     - 최근에 사용된 데이터가 덜 중요하다고 가정하는 경우에 유용
    
-  - 약수의 개수 구하기
+- 약수의 개수 구하기
   ```py
   def count_divisors(n):
     count = 0
@@ -430,5 +430,23 @@
             if i != n // i:
                 count += 1
     return count
+  ```
 
-  ```  
+
+- 소수 판별 함수
+  ```py
+  def is_prime(n):
+      """소수 판별 함수"""
+      if n <= 1:
+          return False
+      if n <= 3:
+          return True
+      if n % 2 == 0 or n % 3 == 0:
+          return False
+      i = 5
+      while i * i <= n:
+          if n % i == 0 or n % (i + 2) == 0:
+              return False
+          i += 6
+      return True
+  ```
