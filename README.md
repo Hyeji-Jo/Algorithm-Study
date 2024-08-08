@@ -418,4 +418,17 @@
       
   - MRU (Most Recently Used)  
     - 가장 최근에 사용된 데이터를 제거하는 방식  
-    - 최근에 사용된 데이터가 덜 중요하다고 가정하는 경우에 유용      
+    - 최근에 사용된 데이터가 덜 중요하다고 가정하는 경우에 유용
+   
+  - 약수의 개수 구하기
+  ```py
+  def count_divisors(n):
+    count = 0
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            count += 1
+            if i != n // i:
+                count += 1
+    return count
+
+  ```  
