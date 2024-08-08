@@ -450,3 +450,15 @@
           i += 6
       return True
   ```
+
+- 소수 도출 함수
+  ```py
+  def solution(n):
+    num = set(range(2, n + 1))  # 2부터 n까지의 모든 숫자를 포함하는 집합을 생성합니다.
+
+    for i in range(2, n + 1):  # 2부터 n까지 반복합니다.
+        if i in num:  # 현재 숫자가 집합에 있는 경우
+            num -= set(range(2 * i, n + 1, i))  # i의 배수들을 집합에서 제거합니다.
+
+    return len(num)  # 남아 있는 숫자의 개수를 반환합니다.
+  ```
