@@ -30,6 +30,12 @@
   # 거꾸로 출력하기 : [::-1]
   s = 'abcde'
   print(s[::-1])  # 'edcba'
+
+  # 숫자 찾기 ( r'\d+' )
+  # re.findall : 정규식과 매치되는 모든 문자열(substring)을 리스트로 리턴
+  import re
+  string = "There are 123 apples and 456 oranges."
+  numbers = re.findall(r'\d+', string) # ['123', '456']
   ```  
   
 - [조건문](https://github.com/Hyeji-Jo/Algorithm-Study/tree/8a2d055237545b9842580e41a899d4410143f2bd/%08Programmers/Python%20%EA%B8%B0%EC%B4%88/%EC%A1%B0%EA%B1%B4%EB%AC%B8)  
@@ -106,9 +112,11 @@
   # lambda 활용
   sorted(strings, key=lambda x: (x[n], x))
 
+
   # Counter 함수 활용
   from collections import Counter
   Counter(['red', 'blue', 'red', 'green', 'blue', 'blue']) # Counter({'blue': 3, 'red': 2, 'green': 1})
+  # counter.most_common() : 가장 빈도가 높은 요소부터 내림차순으로 정렬된 리스트를 반환
   ```  
   
 
