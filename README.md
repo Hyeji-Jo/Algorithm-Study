@@ -358,9 +358,31 @@
   number = 255
   base = 16
   print(decimal_to_base(number, base))  # 10진수 255를 16진법으로 변환
-  ```
-
+  ```  
+  
   - n 진수를 10진수로 변환 : int(a, n)
   ```py
   int(0021, 3)  # 7
-  ```
+  ```  
+    
+  
+- 행렬 계산 : import numpy
+  ```py
+  import numpy as np
+  new1 = np.array(arr1)
+  new2 = np.array(arr2)
+
+  # 행렬 곱
+  np.dot(new1, new2).tolist()
+  (new1@new2).tolist()
+
+  # 행렬의 전치
+  new1.T
+
+  # 역행렬
+  np.linalg.inv(new1)
+
+  # 행렬의 외적
+  np.cross(new1, new2)
+  ```  
+    
